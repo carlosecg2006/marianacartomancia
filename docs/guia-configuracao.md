@@ -88,3 +88,38 @@ A Vercel é o serviço onde o site vai ficar hospedado. Ligando o repositório a
 - **Não** precisa colocar nenhum cartão: o plano Hobby é gratuito.
 - **Não** precisa de domínio agora. Ele entra no fim, quando o site estiver pronto.
 - Se aparecer alguma tela diferente das descritas aqui, tire um print e me mande que eu te guio.
+
+---
+
+## Parte 3 — Conta no Supabase (banco de dados)
+
+### O que é
+
+O Supabase guarda tudo o que a Mari vai poder editar no painel: textos, citações, perguntas, depoimentos e a agenda. Também cuida do login dela. O plano gratuito é suficiente.
+
+### Passo a passo
+
+1. **Abra** https://supabase.com e clique em **Start your project** (Começar o seu projeto).
+2. Escolha **Continue with GitHub** e entre com a mesma conta do GitHub (`carlosecg2006`). Aceite a permissão (**Authorize**).
+3. Se ele pedir para criar uma **organização**, use o seu nome, escolha o tipo **Personal** e o plano **Free** (gratuito).
+4. Clique em **New project** (Novo projeto) e preencha:
+   - **Name:** `mariana-dayrell`
+   - **Database Password:** clique em **Generate a password** e **guarde essa senha num lugar seguro**, como um gerenciador de senhas. Não precisa me mandar.
+   - **Region:** **South America (São Paulo)**. É a mais perto de Minas, e o site fica mais rápido.
+5. Clique em **Create new project** e espere uns 2 minutos até ele terminar de preparar.
+6. No menu da esquerda, abra **Project Settings** (ícone de engrenagem) → **API** (ou **Data API**). Ali aparecem:
+   - **Project URL**, algo como `https://abcdxyz.supabase.co`: **pode me mandar**;
+   - **anon / public key**, uma chave longa marcada como *public*: **pode me mandar**. Ela é pública por natureza, e o banco fica protegido pelas regras que eu escrevo;
+   - **service_role key**, marcada como *secret*: **NÃO mande na conversa e não mostre a ninguém**. Ela é a chave mestra do banco. Mais adiante vou te pedir para colar essa chave direto na Vercel, num campo secreto.
+7. **Me mande aqui** a Project URL e a anon key.
+
+### Para eu criar as tabelas daqui (opcional, recomendado)
+
+Para eu aplicar a estrutura do banco sem você precisar instalar nada:
+
+1. Abra https://supabase.com/dashboard/account/tokens.
+2. Clique em **Generate new token**, dê o nome `claude-marianacartomancia` e escolha uma validade curta, se aparecer a opção (por exemplo, 30 dias).
+3. Copie o token e **me avise que gerou**. Eu te explico na hora a forma segura de passar o token: como uma variável do ambiente, sem colar no meio da conversa.
+4. Quando terminarmos, você pode **revogar o token** na mesma página (botão **Revoke**). Assim ele para de funcionar.
+
+Se preferir não gerar o token, tudo bem: eu te passo um comando para rodar no seu computador, com instruções.
