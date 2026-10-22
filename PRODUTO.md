@@ -50,7 +50,7 @@ Os rascunhos dos textos do site estão em `docs/conteudo-inicial.md`.
 
 - **Formato:** a Mari faz a tiragem e envia pelo WhatsApp **um áudio de 10 a 15 minutos** com a leitura, mais **a foto das cartas** tiradas.
 - Não há chamada ao vivo: a consulta é **assíncrona**.
-- **Onde entra o yoga:** A DEFINIR. Proposta: o áudio começa com uma respiração guiada curta, para a pessoa ouvir a leitura num estado mais calmo.
+- **Onde entra o yoga:** o áudio começa com uma **respiração guiada curta** do Kundalini Yoga, para a pessoa ouvir a leitura num estado mais calmo.
 - **Etapas:** a pessoa escolhe um horário → a Mari confirma e combina o pagamento no WhatsApp → no dia, a Mari faz a tiragem e envia o áudio e a foto.
 
 ## Páginas e seções do site
@@ -113,9 +113,16 @@ Ela tem total liberdade para alterar e personalizar o site. O painel edita:
 5. O WhatsApp abre com uma mensagem pronta ("Olá, Mari! Reservei [data/hora]...").
 6. A Mari combina o pagamento no WhatsApp e **confirma no painel**. Se não confirmar em **2 horas**, o horário volta a ficar livre.
 7. **Lembretes e avisos:**
-   - **A cliente** recebe um lembrete da consulta e um aviso quando o pedido é confirmado, remarcado ou cancelado.
-   - **A Mari** recebe, no dia, um aviso para confirmar a consulta com cada cliente.
-   - Canal de envio: A DEFINIR (ver "Perguntas em aberto").
+   - **Pelo painel, sem API paga de WhatsApp.**
+   - **A Mari** recebe um e-mail a cada novo pedido e, no dia, um e-mail para confirmar as consultas com cada cliente.
+   - No painel, a tela **"Hoje"** lista as consultas do dia. Cada uma tem botões que abrem o WhatsApp da cliente com a mensagem pronta:
+     - lembrete;
+     - confirmação;
+     - remarcação;
+     - cancelamento.
+   - A Mari só aperta enviar. O painel marca o que já foi enviado.
+   - O texto das mensagens prontas é editável no painel.
+   - O formulário não pede e-mail da cliente.
 8. **Google Agenda:** sincronização opcional. A Mari liga no painel se quiser. Ligada, as consultas confirmadas entram na agenda dela e os horários ocupados lá ficam bloqueados no site.
 9. **Remarcação e cancelamento:** a cliente pede pelo WhatsApp e a Mari altera no painel.
 
@@ -145,7 +152,7 @@ Citações de terceiros sempre com o nome do autor e, quando houver, a fonte. S�
 
 | Frase | Autoria | Status |
 |---|---|---|
-| "Que a sua autonomia seja sempre um ritual: silencioso, constante e irreversível." | Sara Koimbra (informada por você) | Não achei a frase publicada na internet. Confirmar onde ela foi dita, se possível. |
+| "Que a sua autonomia seja sempre um ritual: silencioso, constante e irreversível." | Sara Koimbra | Entra no site com o crédito, sem link de fonte (decisão tomada) |
 | Frases da Mari | Mari | Ela escreve depois, pelo painel |
 | Frases da Prem Ras Kaur | Prem Ras Kaur | **Não achei nenhuma citação direta verificável** (ver abaixo) |
 
@@ -153,7 +160,6 @@ Citações de terceiros sempre com o nome do autor e, quando houver, a fonte. S�
   - A pesquisa encontrou o Instagram, o canal no YouTube e um episódio do podcast Yoga Break, mas nenhum texto com falas dela entre aspas.
   - A frase da bio dela ("Te ensino Yoga de verdade, pela Alma") é uma autodescrição, não uma citação para o site.
   - Para ter frases dela, alguém precisa tirá-las dos vídeos ou posts dela, com o link de origem. A Mari pode adicioná-las depois pelo painel.
-  - Como ela é uma pessoa pública e professora da Mari, vale a Mari avisá-la de que vai citá-la.
 - **Einstein:** fora do site (decisão tomada).
 
 ## Perguntas frequentes

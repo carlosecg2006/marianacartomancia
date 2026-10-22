@@ -66,7 +66,6 @@ Eu preparo o espaço, respiro, embaralho e tiro as cartas para você. Depois te 
 - **um áudio de 10 a 15 minutos** com a leitura, no meu tempo e com cuidado;
 - **a foto das cartas** que saíram, para você guardar e voltar a elas quando quiser.
 
-`[Onde entra a respiração: proposta abaixo, a Mari confirma.]`
 No começo do áudio, eu te guio numa respiração curta do Kundalini Yoga, para você receber a leitura com o corpo calmo e o coração aberto.
 
 ---
@@ -123,7 +122,7 @@ Você reserva um horário e me chama no WhatsApp. No dia combinado, eu faço a s
 Um áudio de 10 a 15 minutos com a leitura completa e a foto das cartas que saíram para você.
 
 **Como entra a respiração do Kundalini Yoga? Preciso saber yoga?**
-Não precisa saber nada. `[A Mari confirma o formato.]` No começo do áudio, eu te guio numa respiração simples, que qualquer pessoa consegue fazer, para você ouvir a leitura com mais calma.
+Não precisa saber nada. No começo do áudio, eu te guio numa respiração simples, que qualquer pessoa consegue fazer, para você ouvir a leitura com mais calma.
 
 **Preciso preparar alguma coisa antes?**
 Só pensar no que você quer olhar. Na hora de ouvir o áudio, procure um lugar tranquilo, sem pressa.
