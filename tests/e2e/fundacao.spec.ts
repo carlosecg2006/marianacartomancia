@@ -39,3 +39,19 @@ test("até o lançamento o site fica fora dos buscadores", async ({ page, reques
   const robots = await (await request.get("/robots.txt")).text();
   expect(robots).toMatch(/Disallow: \//);
 });
+
+test("nenhuma chave secreta vai para o navegador", async () => {
+  const { readdirSync, readFileSync } = await import("node:fs");
+  const { join } = await import("node:path");
+  const pasta = ".next/static";
+  const arquivos = readdirSync(pasta, { recursive: true, withFileTypes: true })
+    .filter((e) => e.isFile() && /\.(js|css|html|json)$/.test(e.name))
+    .map((e) => join(e.parentPath, e.name));
+  expect(arquivos.length).toBeGreaterThan(0);
+
+  const proibidos = [/sb_secret_/, /service_role/, /SUPABASE_SECRET_KEY/, /SUPABASE_PUBLISHABLE_KEY/];
+  for (const arquivo of arquivos) {
+    const texto = readFileSync(arquivo, "utf8");
+    for (const p of proibidos) expect(texto, arquivo).not.toMatch(p);
+  }
+});

@@ -94,7 +94,8 @@ Ela tem total liberdade para alterar e personalizar o site. O painel edita:
 - **FAQ:** perguntas e respostas.
 - **Agenda:**
   - dias e horários disponíveis;
-  - duração de cada horário;
+  - duração de cada horário (**A DEFINIR** com a Mari; o banco começa com 60 min);
+  - antecedência mínima para pedir um horário (**A DEFINIR**; começa com 2 h) e até quantos dias à frente a agenda abre (**A DEFINIR**; começa com 30 dias);
   - bloqueio de datas;
   - pedidos recebidos (pendente → confirmado → realizado / cancelado);
   - **remarcar e cancelar** pedidos (é ela quem faz as alterações).

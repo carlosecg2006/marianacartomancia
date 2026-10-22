@@ -1,0 +1,11 @@
+# Configuração do Supabase CLI. Usada no CI para subir o Postgres do Supabase
+# (supabase db start) e rodar os testes pgTAP (supabase test db).
+project_id = "mariana-dayrell"
+
+[db]
+port = 54322
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]

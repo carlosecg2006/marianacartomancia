@@ -10,11 +10,13 @@ import { Perguntas } from "@/components/sections/Perguntas";
 import { QuemSou } from "@/components/sections/QuemSou";
 import { Rodape } from "@/components/sections/Rodape";
 import { FioTurquesa } from "@/components/ui/FioTurquesa";
-import { conteudoInicial } from "@/content/conteudo-inicial";
+import { carregarConteudo } from "@/lib/conteudo/carregar";
+import type { ChaveSecao } from "@/lib/conteudo/secoes";
 
-// One-page: do sol (carta XIX) à lua (carta XVIII). Na F4 o conteúdo passa a vir do banco.
-export default function Home() {
-  const c = conteudoInicial;
+// One-page: do sol (carta XIX) à lua (carta XVIII). O conteúdo vem do banco (editável no painel).
+export default async function Home() {
+  const { conteudo: c, ocultas } = await carregarConteudo();
+  const visivel = (chave: ChaveSecao) => !ocultas.includes(chave);
 
   return (
     <>
@@ -23,14 +25,14 @@ export default function Home() {
       </a>
       <Abertura marca={c.marca} abertura={c.abertura} />
       <main id="conteudo" tabIndex={-1}>
-        <QuemSou marca={c.marca} quemSou={c.quemSou} />
-        <Citacoes citacoes={c.citacoes} />
-        <Baralho baralho={c.baralho} />
-        <Consulta consulta={c.consulta} />
-        <ComoFunciona comoFunciona={c.comoFunciona} />
-        <Agendamento agendamento={c.agendamento} />
-        <Depoimentos depoimentos={c.depoimentos} />
-        <Perguntas faq={c.faq} />
+        {visivel("quemSou") && <QuemSou marca={c.marca} quemSou={c.quemSou} />}
+        {visivel("citacoes") && <Citacoes citacoes={c.citacoes} />}
+        {visivel("baralho") && <Baralho baralho={c.baralho} />}
+        {visivel("consulta") && <Consulta consulta={c.consulta} />}
+        {visivel("comoFunciona") && <ComoFunciona comoFunciona={c.comoFunciona} />}
+        {visivel("agendamento") && <Agendamento agendamento={c.agendamento} />}
+        {visivel("depoimentos") && <Depoimentos depoimentos={c.depoimentos} />}
+        {visivel("faq") && <Perguntas faq={c.faq} />}
       </main>
       <Rodape marca={c.marca} contato={c.contato} contatoFinal={c.contatoFinal} />
       <FioTurquesa />

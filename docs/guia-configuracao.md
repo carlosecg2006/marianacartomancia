@@ -123,3 +123,48 @@ Para eu aplicar a estrutura do banco sem você precisar instalar nada:
 4. Quando terminarmos, você pode **revogar o token** na mesma página (botão **Revoke**). Assim ele para de funcionar.
 
 Se preferir não gerar o token, tudo bem: eu te passo um comando para rodar no seu computador, com instruções.
+
+---
+
+## Parte 4 — Criar as tabelas e ligar o site ao banco
+
+### O que é
+
+Agora o banco recebe a estrutura (as "gavetas" onde ficam os textos e a agenda) e os textos iniciais do site. Depois, a Vercel recebe o endereço e a chave pública, para o site ler o banco.
+
+### 4.1 Criar as tabelas (uma vez só)
+
+1. Abra o arquivo de instalação no GitHub:
+   https://github.com/carlosecg2006/marianacartomancia/blob/claude/adoring-maxwell-mqenhp/supabase/instalar.sql
+2. Clique no botão **Copy raw file** (o ícone de duas folhinhas, no canto direito, acima do texto). O arquivo inteiro vai para a área de transferência.
+   - No celular, é mais fácil fazer isso no computador. Se precisar usar o celular, abra o link no navegador em modo "versão para computador".
+3. No Supabase, abra o projeto **mariana-dayrell** e clique em **SQL Editor** no menu da esquerda (o ícone `>_`).
+4. Clique em **New query** (Nova consulta), cole o texto (Ctrl+V ou Cmd+V) e clique em **Run** (Executar), no canto de baixo à direita.
+   - Se aparecer um aviso de que a consulta tem operações "destrutivas" ou pedindo confirmação, confirme (**Run this query**). O arquivo só cria coisas novas.
+5. Deve aparecer **Success. No rows returned** (ou uma tabelinha pequena). Pronto.
+   - Se aparecer um erro em vermelho, **não rode de novo**. Tire um print e me mande.
+6. Para conferir: clique em **Table Editor** no menu da esquerda. Devem aparecer tabelas como `sections`, `faq_items`, `quotes` e `bookings`.
+
+### 4.2 Ligar o site ao banco na Vercel
+
+1. Abra https://vercel.com, entre no projeto **marianacartomancia** e clique em **Settings** (Configurações) → **Environment Variables** (Variáveis de ambiente).
+2. Adicione duas variáveis. Para cada uma: preencha **Key** (nome) e **Value** (valor), deixe marcados **Production** e **Preview**, e clique em **Save**.
+
+   | Key | Value |
+   |---|---|
+   | `SUPABASE_URL` | `https://arfbnwwdmalwuryfmvdi.supabase.co` |
+   | `SUPABASE_PUBLISHABLE_KEY` | a sua Publishable key (`sb_publishable_...`) |
+
+   - Os nomes **não** começam com `NEXT_PUBLIC_`: as chaves ficam só no servidor do site.
+   - A **Secret key** ainda não entra. Ela só vai ser usada no painel (próxima fase).
+3. Vá em **Deployments**, clique nos três pontinhos (**⋯**) da implantação mais recente e escolha **Redeploy**. Variáveis novas só valem depois de uma nova montagem.
+
+### 4.3 Para eu conferir daqui (opcional, recomendado)
+
+Adicione mais um endereço na lista de domínios permitidos (o mesmo lugar da Parte 1):
+
+```
+arfbnwwdmalwuryfmvdi.supabase.co
+```
+
+Com ele, eu consigo testar o banco de verdade usando só a chave pública, do jeito que um visitante estranho veria: confirmo que os textos aparecem e que os dados da agenda ficam trancados.

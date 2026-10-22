@@ -45,6 +45,18 @@ jobs:
             .lighthouseci/
           retention-days: 7
 
+  banco:
+    name: Banco (pgTAP no Postgres do Supabase)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      # Sobe só o Postgres do Supabase, aplica as migrations e o seed.
+      - run: supabase db start
+      - run: supabase test db
+
   segredos:
     name: Varredura de segredos (gitleaks)
     runs-on: ubuntu-latest
