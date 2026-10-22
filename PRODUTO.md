@@ -2,14 +2,17 @@
 
 O que é o site, para quem é e o que ele precisa transmitir. Regras técnicas em `CLAUDE.md`.
 Tudo marcado **A DEFINIR** depende de uma resposta e não deve ser inventado.
+Os rascunhos dos textos do site estão em `docs/conteudo-inicial.md`.
 
 ---
 
 ## Visão geral e propósito
 
-- Site profissional de apresentação do trabalho de cartomancia de **Mariana Dayrell**, taróloga.
-- É um presente de um amigo. Ela ainda não decidiu se vai atuar profissionalmente na área. Por isso o site é simples para quem visita, mas dá a ela **autonomia total** para mudar tudo sozinha pelo painel.
-- A consulta une a leitura de tarô ao acolhimento e às práticas de **Kundalini Yoga** (respiração e relaxamento), que ela estuda e pratica com a professora **Prem Ras Kaur** (linha Yoga Prem).
+- Site profissional de apresentação do trabalho de cartomancia de **Mariana Dayrell** (Mari), taróloga.
+- É um **presente surpresa** de um amigo. Ela ainda não decidiu se vai atuar profissionalmente na área. Por isso o site é simples para quem visita, mas dá a ela **autonomia total** para mudar tudo sozinha pelo painel.
+- A consulta une a leitura de tarô ao acolhimento e às práticas de respiração e relaxamento do **Kundalini Yoga**, que ela estuda e pratica com a professora **Prem Ras Kaur** (@yogue.prem).
+  - Prem Ras Kaur ensina Kundalini Yoga "pela alma" e pratica há mais de uma década.
+  - Ela participa de conteúdos sobre bem-estar e respiração, como o podcast Yoga Break.
 - Formato: **uma página só (one-page), em scroll**.
 
 ### A ideia central: do sol à lua
@@ -40,8 +43,15 @@ Tudo marcado **A DEFINIR** depende de uma resposta e não deve ser inventado.
 
 ## Proposta de valor
 
-- Uma consulta de tarô que acolhe: **tarô + respiração e relaxamento do Kundalini Yoga**. A pessoa não recebe só uma resposta, ela sai mais centrada.
-- Texto final: A DEFINIR, de preferência com as palavras dela. Pode ser editado no painel.
+- Uma tiragem que acolhe: **tarô + respiração e relaxamento do Kundalini Yoga**. A pessoa não recebe só uma resposta, ela sai mais centrada.
+- Rascunho do texto em `docs/conteudo-inicial.md`. A Mari revisa e edita no painel.
+
+## A consulta
+
+- **Formato:** a Mari faz a tiragem e envia pelo WhatsApp **um áudio de 10 a 15 minutos** com a leitura, mais **a foto das cartas** tiradas.
+- Não há chamada ao vivo: a consulta é **assíncrona**.
+- **Onde entra o yoga:** A DEFINIR. Proposta: o áudio começa com uma respiração guiada curta, para a pessoa ouvir a leitura num estado mais calmo.
+- **Etapas:** a pessoa escolhe um horário → a Mari confirma e combina o pagamento no WhatsApp → no dia, a Mari faz a tiragem e envia o áudio e a foto.
 
 ## Páginas e seções do site
 
@@ -49,16 +59,16 @@ O site público é uma página só. A ordem acompanha a passagem do sol para a l
 
 | # | Seção | Fase | Conteúdo | Status |
 |---|---|---|---|---|
-| 1 | Abertura (hero) | Solar | Nome, uma frase de impacto e chamada para agendar | Frase: A DEFINIR |
-| 2 | Quem sou | Solar | Foto, história, relação com o tarô e com o Kundalini Yoga | Foto: autorizada. Texto: A DEFINIR |
-| 3 | Citações e frases | Solar → crepúsculo | Frases dela e de autores (ver "Citações") | Lista: A DEFINIR |
-| 4 | O baralho | Crepúsculo | "O Lendário Tarot das Bruxas": cartas em destaque, frente e verso | Ver "Sobre o baralho" |
-| 5 | A consulta | Lunar | O que é e como tarô e yoga se unem | Detalhes em aberto (ela ainda não definiu) |
-| 6 | Como funciona | Lunar | Escolher o horário → confirmar pelo WhatsApp → pagar → consulta online | Etapas finais: A DEFINIR |
-| 7 | Agendamento | Lunar | Agenda com os horários livres (ver "Agendamento inteligente") | Proposta abaixo |
+| 1 | Abertura (hero) | Solar | Nome, uma frase de impacto e chamada para agendar | Rascunho pronto |
+| 2 | Quem sou | Solar | Foto, relação com o tarô e com o Kundalini Yoga | Rascunho pronto, faltam detalhes da história dela |
+| 3 | Citações e frases | Solar → crepúsculo | Frases dela e de autores (ver "Citações") | 1 frase recebida |
+| 4 | O baralho | Crepúsculo | "O Lendário Tarot das Bruxas": arte inspirada nele e fotos do baralho dela | Ver "Sobre o baralho" |
+| 5 | A consulta | Lunar | O que é, como tarô e yoga se unem, o que a pessoa recebe | Rascunho pronto |
+| 6 | Como funciona | Lunar | Passo a passo, do horário ao áudio | Rascunho pronto |
+| 7 | Agendamento | Lunar | Agenda com os horários livres | Ver "Agendamento inteligente" |
 | 8 | Depoimentos | Lunar | Feedbacks que ela adiciona pelo painel. A seção some quando não há nenhum. | — |
-| 9 | Perguntas frequentes | Lunar | FAQ (também serve ao GEO) | Proposta abaixo |
-| 10 | Contato | Noite plena | WhatsApp e Instagram | Número: A DEFINIR |
+| 9 | Perguntas frequentes | Lunar | FAQ (também serve ao GEO) | Rascunho pronto |
+| 10 | Contato | Noite plena | WhatsApp e Instagram | Número: depois (campo pronto no painel) |
 | 11 | Rodapé | Noite plena | Créditos, política de privacidade, termos e cookies | Rascunhos jurídicos a revisar |
 
 Fora do scroll público ficam:
@@ -73,45 +83,52 @@ Fora do scroll público ficam:
 | Ver a página inteira | Visitante | — | — |
 | Ver horários livres e pedir agendamento | Visitante | Não | Não (o pagamento é combinado no WhatsApp) |
 | Falar pelo WhatsApp ou Instagram (link direto) | Visitante | — | — |
-| Painel completo | Mariana (administradora) | Sim, com papel `admin` verificado no servidor | — |
+| Painel completo | Mari (administradora) | Sim, com papel `admin` verificado no servidor | — |
 
 ### Painel da administradora
 
-Ela precisa ter total liberdade para alterar e personalizar o site. Proposta do que o painel edita:
-- **Conteúdo de todas as seções:** textos, títulos, frases, foto e imagens das cartas.
+Ela tem total liberdade para alterar e personalizar o site. O painel edita:
+- **Conteúdo de todas as seções:** textos, títulos, frases, foto e imagens.
 - **Citações:** adicionar, editar, reordenar e remover, sempre com o autor.
 - **Depoimentos:** adicionar, editar, esconder e remover.
 - **FAQ:** perguntas e respostas.
 - **Agenda:**
   - dias e horários disponíveis;
-  - duração da consulta;
+  - duração de cada horário;
   - bloqueio de datas;
-  - pedidos recebidos (pendente → confirmado → realizado / cancelado).
-- **Consulta:** descrição, duração e valor exibido (ou "valor sob consulta").
-- **Contatos:** número do WhatsApp, @ do Instagram e mensagem pré-preenchida.
+  - pedidos recebidos (pendente → confirmado → realizado / cancelado);
+  - **remarcar e cancelar** pedidos (é ela quem faz as alterações).
+- **Consulta:** descrição e valor exibido (ou "valor sob consulta").
+- **Contatos:** número do WhatsApp, @ do Instagram (`@maarianadayrell`, hoje desativado) e mensagem pré-preenchida. Os campos já ficam prontos. Enquanto estiverem vazios, os botões não aparecem.
 - **SEO:** título, descrição e imagem de compartilhamento.
-- **Personalização visual:** A DEFINIR até onde vai (ver perguntas). Proposta: escolher entre variações prontas de cor e de fonte, já testadas em contraste, para ela não quebrar a acessibilidade sem querer.
+- **Personalização visual:** ela escolhe entre **variações prontas de cor e de fonte**, já testadas em contraste AA. Não há seletor de cor livre.
+- **Google Agenda:** liga e desliga a sincronização (ver abaixo).
 
-### Agendamento inteligente (proposta)
+### Agendamento inteligente
 
-1. Mariana define a disponibilidade no painel.
+1. A Mari define a disponibilidade no painel.
 2. A visitante vê só os horários livres, no fuso dela, e escolhe um.
-3. Ela informa nome, WhatsApp e, se quiser, a intenção da consulta. Marca o consentimento LGPD com a finalidade descrita.
+3. Ela informa nome, WhatsApp e, se quiser, a intenção da tiragem. Marca o consentimento LGPD com a finalidade descrita.
 4. O horário fica **reservado como "pendente"**, para que ninguém mais o pegue.
-5. O WhatsApp abre com uma mensagem pronta ("Olá, Mariana! Reservei [data/hora]...").
-6. Mariana combina o pagamento no WhatsApp e **confirma no painel**. Se não confirmar, o horário volta a ficar livre depois de **A DEFINIR** horas.
-7. Lembretes e sincronização com Google Agenda: A DEFINIR.
+5. O WhatsApp abre com uma mensagem pronta ("Olá, Mari! Reservei [data/hora]...").
+6. A Mari combina o pagamento no WhatsApp e **confirma no painel**. Se não confirmar em **2 horas**, o horário volta a ficar livre.
+7. **Lembretes e avisos:**
+   - **A cliente** recebe um lembrete da consulta e um aviso quando o pedido é confirmado, remarcado ou cancelado.
+   - **A Mari** recebe, no dia, um aviso para confirmar a consulta com cada cliente.
+   - Canal de envio: A DEFINIR (ver "Perguntas em aberto").
+8. **Google Agenda:** sincronização opcional. A Mari liga no painel se quiser. Ligada, as consultas confirmadas entram na agenda dela e os horários ocupados lá ficam bloqueados no site.
+9. **Remarcação e cancelamento:** a cliente pede pelo WhatsApp e a Mari altera no painel.
 
 - A visitante não precisa criar conta.
-- A plataforma da consulta (WhatsApp vídeo, Google Meet etc.): A DEFINIR.
 
 ## Modelo de pagamento
 
 - A consulta é **cobrada**, por um valor justo.
 - O pagamento é feito **pelo WhatsApp, direto com ela** (Pix ou como ela combinar). **Não há checkout no site** e o Stripe não será usado por enquanto.
-- **Estimativa de valor** (para ela decidir): **R$ 80 a R$ 150** por sessão online de 45 a 60 minutos com tiragem e prática de respiração.
-  - A referência é frágil: anúncios brasileiros vão de cerca de R$ 13 (poucas perguntas) a R$ 170 (sessões terapêuticas mais longas).
-  - Quem está começando costuma ficar na parte de baixo da faixa.
+- **Estimativa de valor** (para ela decidir): **R$ 40 a R$ 80** por tiragem com áudio de 10 a 15 minutos e foto das cartas.
+  - Base: anúncios brasileiros de tiragens curtas por mensagem ficam por volta de R$ 13 a R$ 50.
+  - O acolhimento e a respiração guiada justificam ficar acima disso.
+  - Sessões terapêuticas longas e ao vivo chegam a R$ 170.
 - No site, o valor pode aparecer fixo ou como "sob consulta". Ela escolhe no painel.
 
 ## Tom de voz
@@ -124,34 +141,35 @@ Ela precisa ter total liberdade para alterar e personalizar o site. Proposta do 
 
 ## Citações
 
-Citações de terceiros sempre com o nome do autor e, quando houver, a fonte.
+Citações de terceiros sempre com o nome do autor e, quando houver, a fonte. Só entram citações com autoria verificada ou informada por vocês.
 
-- **Frases da Mariana:** A DEFINIR (lista dela).
-- **Sara Koimbra** (taróloga, astróloga e ocultista): quais frases? A DEFINIR, com a fonte.
-- **Einstein, "tudo é energia":**
-  - A frase conhecida ("Tudo é energia, e isso é tudo o que existe...") **não é dele**. Pesquisadores rastrearam o texto até o canalizador Darryl Anka ("Bashar").
-  - Atribuí-la a Einstein seria um erro que visitantes podem apontar.
-  - Opções:
-    - (a) usar uma ideia que ele realmente disse: que massa e energia são manifestações diferentes da mesma coisa;
-    - (b) usar a frase sem atribuir a Einstein.
-  - Decisão: A DEFINIR.
+| Frase | Autoria | Status |
+|---|---|---|
+| "Que a sua autonomia seja sempre um ritual: silencioso, constante e irreversível." | Sara Koimbra (informada por você) | Não achei a frase publicada na internet. Confirmar onde ela foi dita, se possível. |
+| Frases da Mari | Mari | Ela escreve depois, pelo painel |
+| Frases da Prem Ras Kaur | Prem Ras Kaur | **Não achei nenhuma citação direta verificável** (ver abaixo) |
 
-## Perguntas frequentes (proposta)
+- **Prem Ras Kaur:**
+  - A pesquisa encontrou o Instagram, o canal no YouTube e um episódio do podcast Yoga Break, mas nenhum texto com falas dela entre aspas.
+  - A frase da bio dela ("Te ensino Yoga de verdade, pela Alma") é uma autodescrição, não uma citação para o site.
+  - Para ter frases dela, alguém precisa tirá-las dos vídeos ou posts dela, com o link de origem. A Mari pode adicioná-las depois pelo painel.
+  - Como ela é uma pessoa pública e professora da Mari, vale a Mari avisá-la de que vai citá-la.
+- **Einstein:** fora do site (decisão tomada).
 
-Perguntas escolhidas por mim. As respostas precisam vir dela. Tudo editável no painel.
+## Perguntas frequentes
 
-1. Preciso acreditar em tarô para fazer uma consulta?
-2. Como funciona a consulta online?
-3. Onde acontece a consulta (vídeo, chamada, áudio)?
-4. Quanto tempo dura?
-5. Como entra a prática de respiração e relaxamento? Preciso saber yoga?
-6. Preciso preparar alguma coisa antes (lugar calmo, perguntas)?
-7. Como agendo e como pago?
-8. Posso remarcar ou cancelar?
-9. O tarô prevê o futuro?
-10. O que eu conto na consulta fica entre nós?
-11. A consulta substitui terapia ou acompanhamento médico?
-    - Resposta obrigatória: **não**. É uma prática de autoconhecimento e acolhimento.
+Respostas em rascunho em `docs/conteudo-inicial.md`. Tudo é editável no painel.
+
+1. Preciso acreditar em tarô para fazer uma tiragem?
+2. Como funciona a tiragem online?
+3. O que eu recebo?
+4. Como entra a respiração do Kundalini Yoga? Preciso saber yoga?
+5. Preciso preparar alguma coisa antes?
+6. Como agendo e como pago?
+7. Posso remarcar ou cancelar?
+8. O tarô prevê o futuro?
+9. O que eu conto fica entre nós?
+10. A tiragem substitui terapia ou acompanhamento médico? (Resposta obrigatória: **não**.)
 
 ## Referências visuais
 
@@ -162,7 +180,7 @@ Perguntas escolhidas por mim. As respostas precisam vir dela. Tudo editável no 
 | `caixa-e-cartas-ambiente.jpg` | Caixa do baralho e as cartas A Força (8), A Enforcada (12) e A Louca (22) sobre uma mesa com velas, cristais, bola de cristal, caldeirão e lavanda |
 | `carta-frente-verso.jpg` | O Eremita (9) de frente e o verso das cartas. Cartas de 11 × 7 cm, 78 cartas, plastificadas |
 | `cartas-arcanos-maiores-0-7.jpg` | O Mago, A Sacerdotisa, A Imperatriz, O Imperador, O Hierofante, Os Enamorados, O Carro e o verso |
-| `foto-tarologa.jpg` | Mariana: cabelo longo ondulado, tatuagem de mandala no colo, blazer escuro. **Uso autorizado por ela.** |
+| `foto-tarologa.jpg` | Mari: cabelo longo ondulado, tatuagem de mandala no colo, blazer escuro. **Uso autorizado por ela.** |
 
 - Outras fotos dela: ainda não há.
 - Instagram dela (@maarianadayrell): desativado no momento.
@@ -180,22 +198,44 @@ Perguntas escolhidas por mim. As respostas precisam vir dela. Tudo editável no 
 
 - A base é **ancestral/milenar**: a estética das cartas, ornamento, natureza, simetria art déco.
 - Por cima vem um **toque sutil de Y2K anos 2000**: brilhos e reflexos (estrelas cintilantes, gradientes iridescentes discretos, pequenos efeitos cromados ou holográficos) usados como detalhe, nunca como estética dominante.
-- Onde o Y2K aparece: A DEFINIR na fase de design. Proposta: mais presente na fase lunar (estrelas, brilho da lua) e quase ausente na solar.
+- Proposta: o Y2K fica mais presente na fase lunar (estrelas, brilho da lua) e quase ausente na solar.
 
 ### Sobre o baralho
 
-- **Nome:** "O Lendário Tarot das Bruxas", 78 cartas plastificadas, manual físico e digital.
-- **Autoria informada:** Ellen Dugan, com ilustrações de Mark Evans.
-- **⚠ Divergência a confirmar antes de publicar os créditos:**
-  - O "Witches Tarot" de Dugan e Evans (Llewellyn, 2012; no Brasil, "Tarô das Bruxas", Editora Isis) tem **arte digital feita a partir de fotos posadas**.
-  - As cartas das imagens de referência têm **ilustração pintada, estilo conto de fadas**, e arcanos no feminino ("A Louca" com número 22, "A Enforcada"). É um estilo diferente.
-  - A caixa da foto não mostra o nome de autores.
-  - Pode ser uma edição diferente ou outro baralho. Vale a Mariana conferir a caixa e o manual.
-  - Até lá, a linha de créditos fica **A DEFINIR**.
-- **Uso das imagens no site** (vocês escolheram os dois):
-  - fotos próprias do baralho dela, em uso, mostrando o objeto (o mais seguro);
-  - ilustrações originais inspiradas no estilo, sem copiar as cartas.
-- As fotos do anúncio de marketplace **não** vão para o site.
+- **Nome:** "O Lendário Tarot das Bruxas".
+- **Ficha:**
+  - 78 cartas: 22 Arcanos Maiores e 56 Arcanos Menores;
+  - plastificadas, 11 × 7 cm;
+  - livreto com o significado de cada carta;
+  - em algumas edições, QR Code para conteúdo de apoio.
+- **Autoria: não identificada.**
+  - Os anúncios do "Lendário" (Mercado Livre, Shopee, Amazon, Studio Orion, Aydala, Cultura Zen, Donna7) não citam autora, ilustrador nem editora.
+  - Na Amazon, a ficha diz marca "Genérico" e fabricante "artesanal".
+  - Alguns anúncios usam o texto de outro produto ("Baralho 78 Cartas das Bruxas AYA MYSTIC").
+- **Não é o de Ellen Dugan e Mark Evans.**
+  - As informações sobre Dugan e Evans que você encontrou são do **"Tarô das Bruxas"** (*Witches Tarot*, Llewellyn 2012; no Brasil pela Editora Isis e pela Folhas de Luz). É outro produto, vendido com livro.
+  - A arte de Mark Evans é **digital, feita a partir de fotos posadas**. As cartas da Mari são **pintadas, em estilo conto de fadas**, com arcanos no feminino ("A Louca" numerada 22, "A Enforcada").
+  - Por isso, **o site não credita Dugan nem Evans**. O baralho aparece só pelo nome, sem autoria.
+- **Uso das imagens no site:**
+  - Como não se sabe quem tem os direitos das ilustrações, o site **não reproduz a arte das cartas**: nem as fotos dos anúncios, nem digitalizações.
+  - O baralho aparece de duas formas:
+    1. **arte original** criada para o site, inspirada no estilo (ver abaixo);
+    2. **fotos do baralho físico da Mari**, em uso, mostrando o objeto. Como o site é surpresa, elas entram depois, pelo painel.
+
+### Como a arte do site será feita
+
+Nada copiado das cartas. Tudo com origem e licença registradas em `docs/creditos-imagens.md`.
+
+1. **Ornamentos vetoriais próprios (SVG):**
+   - molduras art déco, vinhas de hera em simetria espelhada e selos numerados no estilo das cartas;
+   - sol, lua crescente, estrelas, pentagrama de galhos.
+   - São a "assinatura" visual do site e animam bem com o scroll.
+2. **Gravuras antigas de domínio público:**
+   - ilustrações botânicas, mapas celestes e gravuras de alquimia e astronomia;
+   - fontes: Wikimedia Commons, Biodiversity Heritage Library, The Met Open Access, entre outras;
+   - viram colagens surrealistas, tingidas na paleta solar ou lunar. Isso dá o lado **ancestral/milenar** com material real.
+3. **Camada Y2K sutil (CSS/WebGL leve):** cintilação de estrelas, reflexo iridescente na lua e brilho cromado discreto nos ornamentos dourados. Desligada com `prefers-reduced-motion`.
+4. **Fotos da Mari:** a foto autorizada agora; outras fotos e as fotos do baralho depois, pelo painel.
 
 ## O que o site NÃO deve ser
 
@@ -205,4 +245,4 @@ Perguntas escolhidas por mim. As respostas precisam vir dela. Tudo editável no 
 - Escuro do começo ao fim: a abertura é **solar**, e a noite chega com o scroll.
 - Assustador ou de terror: o mistério é acolhedor.
 - Uma loja: não há checkout no site, e a visitante não precisa criar conta.
-- Um lugar que use ilustrações sem autorização ou citações com autoria errada.
+- Um lugar que reproduza ilustrações sem autorização ou use citações com autoria errada.

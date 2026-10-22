@@ -40,6 +40,13 @@ Regras permanentes do projeto. Valem para toda tarefa. Contexto do produto em `P
   - O contraste AA vale em toda a transição, inclusive nos estados intermediários.
 - Tipografia com misticidade, seriedade e acalento.
 - A referência principal é a estética das cartas do baralho da taróloga (ver `PRODUTO.md` e `docs/referencias/`).
+- **Nunca reproduza a arte das cartas** (autoria e direitos desconhecidos). A arte do site é:
+  - SVG original;
+  - gravuras de domínio público;
+  - efeitos Y2K em CSS/WebGL leve;
+  - fotos da Mari.
+  - Detalhes em "Como a arte do site será feita", no `PRODUTO.md`.
+- Os textos padrão iniciais estão em `docs/conteudo-inicial.md`.
 
 ## Animações
 
