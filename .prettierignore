@@ -1,0 +1,9 @@
+.claude/
+.next/
+node_modules/
+docs/
+playwright-report/
+test-results/
+package-lock.json
+skills-lock.json
+*.md

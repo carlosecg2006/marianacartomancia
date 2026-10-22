@@ -4,7 +4,9 @@ Regras permanentes do projeto. Valem para toda tarefa. Contexto do produto em `P
 
 ## Stack
 
-- **Front-end:** Next.js (App Router) + Bootstrap 5 customizado via Sass.
+- **Front-end:** Next.js 16 (App Router) + Bootstrap 5 customizado via Sass.
+  - O Next 16 mudou APIs (ex.: `middleware.ts` virou `proxy.ts`; `cacheComponents` ligado). Antes de usar uma API, leia o guia em `node_modules/next/dist/docs/`.
+  - CSP: a página pública é estática, então o CSP vem do `next.config.ts` (sem nonce). `/admin` e `/login` são dinâmicos e recebem CSP com nonce no `proxy.ts`.
   - Sobrescreva variáveis, tipografia, espaçamentos e componentes. O resultado **não pode** ter cara de Bootstrap padrão.
   - Importe só os módulos Sass do Bootstrap que forem usados.
 - **Back-end e banco:** Supabase (Auth, Postgres, Storage).
