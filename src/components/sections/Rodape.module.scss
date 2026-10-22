@@ -71,25 +71,24 @@
   }
 }
 
+// Selo do verso: a carta de baralho de 1838 com o mapa do Brasil.
 .selo {
   display: grid;
   justify-items: center;
-  gap: var(--space-1);
-  width: 5.5rem;
-  margin-bottom: var(--space-6);
-  padding: var(--space-3) var(--space-2) var(--space-2);
+  gap: var(--space-2);
+  width: 6.5rem;
+  margin: 0 0 var(--space-6);
+  padding: 6px 6px var(--space-2);
   background: #0c1324;
   color: #ede5d3;
   font-family: var(--font-display);
   font-weight: 500;
 
-  // A lua do selo fica na cor do luar, mesmo dentro do verso solar.
-  --ink: #ede5d3;
-}
-
-.lua {
-  width: 3rem;
-  height: 3rem;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .regiao {
@@ -99,7 +98,8 @@
 
 .imprenta {
   grid-column: 1 / -1;
-  margin: 0;
+  max-width: 72ch;
+  margin: 0 auto;
   color: var(--muted);
   font-size: var(--step-small);
   text-align: center;

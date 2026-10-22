@@ -67,3 +67,33 @@
     line-height: 1.45;
   }
 }
+
+// A lua crescendo e minguando: o tempo que a tiragem pede.
+.luas {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-9);
+
+  @media (min-width: 900px) {
+    grid-column: 9 / 13;
+    gap: var(--space-5);
+  }
+}
+
+.lua {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: var(--space-3);
+    color: var(--muted);
+    font-size: var(--step-small);
+  }
+}

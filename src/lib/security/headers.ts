@@ -1,6 +1,6 @@
 type Header = { key: string; value: string };
 
-type Options = { isDev: boolean };
+type Options = { isDev: boolean; publico?: boolean };
 
 // CSP para páginas estáticas (ISR). Nonce exige renderização dinâmica,
 // então o painel (/admin, /login) recebe um CSP com nonce no proxy (fase F5).
@@ -23,7 +23,7 @@ export function buildContentSecurityPolicy({ isDev }: Options): string {
   return policy.join("; ");
 }
 
-export function buildSecurityHeaders({ isDev }: Options): Header[] {
+export function buildSecurityHeaders({ isDev, publico = false }: Options): Header[] {
   const headers: Header[] = [
     { key: "Content-Security-Policy", value: buildContentSecurityPolicy({ isDev }) },
     { key: "X-Frame-Options", value: "DENY" },
@@ -35,6 +35,9 @@ export function buildSecurityHeaders({ isDev }: Options): Header[] {
     },
     { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
   ];
+
+  // Até o lançamento o site é surpresa: nenhum buscador indexa.
+  if (!publico) headers.push({ key: "X-Robots-Tag", value: "noindex, nofollow" });
 
   if (!isDev) {
     headers.push({

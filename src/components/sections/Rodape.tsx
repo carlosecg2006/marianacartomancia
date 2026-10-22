@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Hera } from "@/components/ornaments/Hera";
-import { Lua } from "@/components/ornaments/Lua";
 import { Pentagrama } from "@/components/ornaments/Pentagrama";
 import { Botao } from "@/components/ui/Botao";
+import { CREDITO_GRAVURAS, gravuras } from "@/content/gravuras";
 import type { Conteudo } from "@/lib/validation/conteudo";
 import styles from "./Rodape.module.scss";
 
@@ -48,10 +49,10 @@ export function Rodape({ marca, contato, contatoFinal }: Props) {
         </div>
 
         <div className={styles.enderecos}>
-          <div className={styles.selo} aria-hidden="true">
-            <Lua className={styles.lua} />
-            <span>XVIII</span>
-          </div>
+          <figure className={styles.selo}>
+            <Image src={gravuras.brasil.imagem} alt={gravuras.brasil.alt} sizes="6rem" />
+            <span aria-hidden="true">XVIII</span>
+          </figure>
           <ul>
             {links.map((l) => (
               <li key={l.href}>
@@ -63,7 +64,7 @@ export function Rodape({ marca, contato, contatoFinal }: Props) {
         </div>
 
         <p className={styles.imprenta}>
-          {marca.nome} · {marca.papel}. Ilustrações e ornamentos desenhados para este site.
+          {marca.nome} · {marca.papel}. Ilustrações e ornamentos desenhados para este site. {CREDITO_GRAVURAS}
         </p>
       </div>
     </footer>

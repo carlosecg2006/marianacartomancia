@@ -35,3 +35,17 @@ describe("buildSecurityHeaders", () => {
     expect(headers["Permissions-Policy"]).toContain("camera=()");
   });
 });
+
+describe("indexação", () => {
+  it("bloqueia buscadores enquanto o site não é público", () => {
+    const h = Object.fromEntries(buildSecurityHeaders({ isDev: false }).map((x) => [x.key, x.value]));
+    expect(h["X-Robots-Tag"]).toBe("noindex, nofollow");
+  });
+
+  it("libera buscadores no lançamento", () => {
+    const h = Object.fromEntries(
+      buildSecurityHeaders({ isDev: false, publico: true }).map((x) => [x.key, x.value]),
+    );
+    expect(h["X-Robots-Tag"]).toBeUndefined();
+  });
+});

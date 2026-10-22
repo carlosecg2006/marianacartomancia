@@ -107,11 +107,11 @@ O Supabase guarda tudo o que a Mari vai poder editar no painel: textos, citaçõ
    - **Database Password:** clique em **Generate a password** e **guarde essa senha num lugar seguro**, como um gerenciador de senhas. Não precisa me mandar.
    - **Region:** **South America (São Paulo)**. É a mais perto de Minas, e o site fica mais rápido.
 5. Clique em **Create new project** e espere uns 2 minutos até ele terminar de preparar.
-6. No menu da esquerda, abra **Project Settings** (ícone de engrenagem) → **API** (ou **Data API**). Ali aparecem:
-   - **Project URL**, algo como `https://abcdxyz.supabase.co`: **pode me mandar**;
-   - **anon / public key**, uma chave longa marcada como *public*: **pode me mandar**. Ela é pública por natureza, e o banco fica protegido pelas regras que eu escrevo;
-   - **service_role key**, marcada como *secret*: **NÃO mande na conversa e não mostre a ninguém**. Ela é a chave mestra do banco. Mais adiante vou te pedir para colar essa chave direto na Vercel, num campo secreto.
-7. **Me mande aqui** a Project URL e a anon key.
+6. No menu da esquerda, clique na **engrenagem (Project Settings)** e abra **API Keys**. Em alguns painéis, a URL fica em **Data API**. O Supabase mudou os nomes das chaves recentemente:
+   - **Project URL**, no formato `https://SEU-PROJECT-ID.supabase.co`. O *Project ID* que você viu é a parte do meio do endereço. **Pode me mandar.**
+   - **Publishable key**, que começa com `sb_publishable_...`. Em painéis antigos ela aparece como **anon / public**. **Pode me mandar.** Ela é pública por natureza, e o banco fica protegido pelas regras que eu escrevo.
+   - **Secret key**, que começa com `sb_secret_...`. Em painéis antigos aparece como **service_role**. **NÃO mande na conversa e não mostre a ninguém.** Ela é a chave mestra do banco. Mais adiante vou te pedir para colar essa chave direto na Vercel, num campo secreto.
+7. **Me mande aqui** a Project URL e a Publishable key (ou a anon key).
 
 ### Para eu criar as tabelas daqui (opcional, recomendado)
 

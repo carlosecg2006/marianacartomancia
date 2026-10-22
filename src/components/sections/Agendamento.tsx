@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Estrela } from "@/components/ornaments/Estrela";
-import { Lua } from "@/components/ornaments/Lua";
+import { gravuras } from "@/content/gravuras";
 import type { Conteudo } from "@/lib/validation/conteudo";
 import styles from "./Agendamento.module.scss";
 
@@ -27,9 +28,15 @@ export function Agendamento({ agendamento }: Props) {
       className={styles.secao}
       aria-labelledby="agendamento-titulo"
     >
-      <div className={styles.ceu} aria-hidden="true">
-        <Lua fase="cheia" className={styles.lua} data-alvo="lua" />
-        <span className={styles.estrelas} data-estrelas>
+      <div className={styles.ceu}>
+        <span className={styles.lua} data-alvo="lua">
+          <Image
+            src={gravuras.luaCheia.imagem}
+            alt={`${gravuras.luaCheia.alt} (${gravuras.luaCheia.autoria}, ${gravuras.luaCheia.data})`}
+            sizes="(min-width: 900px) 30vw, 14rem"
+          />
+        </span>
+        <span className={styles.estrelas} data-estrelas aria-hidden="true">
           {ESTRELAS.map(([x, y, s]) => (
             <span
               key={`${x}-${y}`}

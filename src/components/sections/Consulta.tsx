@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { gravuras } from "@/content/gravuras";
 import type { Conteudo } from "@/lib/validation/conteudo";
 import styles from "./Consulta.module.scss";
 
@@ -26,6 +28,17 @@ export function Consulta({ consulta }: Props) {
             </div>
           ))}
         </dl>
+
+        <div className={styles.luas} data-revelar-grupo>
+          {[gravuras.luaCrescente, gravuras.luaMinguante].map((g) => (
+            <figure key={g.titulo} className={styles.lua}>
+              <Image src={g.imagem} alt={g.alt} sizes="(min-width: 900px) 14rem, 45vw" />
+              <figcaption>
+                {g.titulo}, {g.autoria} ({g.data})
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

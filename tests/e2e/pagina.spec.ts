@@ -97,3 +97,27 @@ test.describe("página inicial", () => {
     expect(results.violations).toEqual([]);
   });
 });
+
+test.describe("gravuras", () => {
+  test("toda imagem tem texto alternativo e é servida leve", async ({ page }) => {
+    await page.goto("/");
+    const imagens = page.locator("main img, footer img, header img");
+    expect(await imagens.count()).toBeGreaterThanOrEqual(6);
+    for (const img of await imagens.all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect(img).toHaveAttribute("alt", /\S{3,}/);
+      await expect
+        .poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0))
+        .toBe(true);
+      const src = await img.evaluate((el: HTMLImageElement) => el.currentSrc);
+      const resposta = await page.request.get(src, { headers: { accept: "image/avif,image/webp,*/*" } });
+      expect(resposta.headers()["content-type"], src).toMatch(/image\/(avif|webp)/);
+      expect((await resposta.body()).byteLength, src).toBeLessThan(300 * 1024);
+    }
+  });
+
+  test("o rodapé credita as gravuras do Met", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator("footer")).toContainText("The Metropolitan Museum of Art");
+  });
+});

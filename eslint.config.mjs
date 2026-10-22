@@ -11,6 +11,8 @@ const eslintConfig = defineConfig([
       "no-console": ["error", { allow: ["warn", "error"] }],
     },
   },
+  // Scripts de linha de comando podem escrever no terminal.
+  { files: ["scripts/**"], rules: { "no-console": "off" } },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

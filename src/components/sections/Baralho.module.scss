@@ -11,6 +11,21 @@
   background: var(--bg);
 }
 
+// A xilogravura de Dürer tingida pelo fundo do crepúsculo (multiply só escurece:
+// o texto claro por cima ganha contraste, nunca perde).
+.fundo {
+  object-fit: cover;
+  object-position: 50% 20%;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.frente {
+  position: relative;
+  z-index: 1;
+}
+
 .texto {
   grid-column: 1 / -1;
 

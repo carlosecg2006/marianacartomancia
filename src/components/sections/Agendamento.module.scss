@@ -22,8 +22,16 @@
   position: absolute;
   top: 12%;
   left: 14%;
+  display: block;
   width: clamp(12rem, 30vw, 28rem);
-  height: auto;
+
+  // A prancha de Mellan recortada no disco da lua.
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    clip-path: circle(40% at 50% 46%);
+  }
 
   @media (max-width: 899px) {
     top: 2rem;

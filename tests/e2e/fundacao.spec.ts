@@ -30,3 +30,12 @@ test("não publica source maps do navegador", async ({ page, request }) => {
     expect(map.status(), `${url}.map`).toBe(404);
   }
 });
+
+test("até o lançamento o site fica fora dos buscadores", async ({ page, request }) => {
+  const resposta = await request.get("/");
+  expect(resposta.headers()["x-robots-tag"]).toBe("noindex, nofollow");
+  await page.goto("/");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+  const robots = await (await request.get("/robots.txt")).text();
+  expect(robots).toMatch(/Disallow: \//);
+});

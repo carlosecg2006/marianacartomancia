@@ -23,9 +23,36 @@
   grid-column: 1 / -1;
   display: grid;
   gap: var(--space-8);
+  align-content: start;
 
   @media (min-width: 900px) {
     grid-column: 5 / 13;
+    grid-row: 1 / span 2;
+  }
+}
+
+// Prancha "colada" no campo: papel da gravura sobre o vermelho, sem moldura de linha.
+.prancha {
+  grid-column: 1 / -1;
+  order: 3;
+  width: min(100%, 18rem);
+  margin: var(--space-8) 0 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--step-small);
+  }
+
+  @media (min-width: 900px) {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    order: 0;
   }
 }
 

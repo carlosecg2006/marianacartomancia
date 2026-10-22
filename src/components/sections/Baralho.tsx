@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { Estrela } from "@/components/ornaments/Estrela";
 import { Hera } from "@/components/ornaments/Hera";
@@ -5,6 +6,7 @@ import { Lua } from "@/components/ornaments/Lua";
 import { Pentagrama } from "@/components/ornaments/Pentagrama";
 import { Sol } from "@/components/ornaments/Sol";
 import { Carta } from "@/components/ui/Carta";
+import { gravuras } from "@/content/gravuras";
 import type { Conteudo } from "@/lib/validation/conteudo";
 import styles from "./Baralho.module.scss";
 
@@ -22,7 +24,14 @@ const ORNAMENTOS: ReactNode[] = [
 export function Baralho({ baralho }: Props) {
   return (
     <section id="baralho" data-phase="crepusculo" className={styles.secao} aria-labelledby="baralho-titulo">
-      <div className="grade">
+      <Image
+        src={gravuras.mapaCeleste.imagem}
+        alt={gravuras.mapaCeleste.alt}
+        fill
+        sizes="100vw"
+        className={styles.fundo}
+      />
+      <div className={`grade ${styles.frente}`}>
         <div className={styles.texto} data-revelar-grupo>
           <h2 id="baralho-titulo" className={styles.titulo}>
             {baralho.titulo}
@@ -34,7 +43,12 @@ export function Baralho({ baralho }: Props) {
       </div>
 
       {/* Focável: no celular a fileira rola para o lado e precisa responder ao teclado. */}
-      <ul className={styles.cartas} aria-label="Algumas cartas do baralho" tabIndex={0} data-cena="cartas">
+      <ul
+        className={`${styles.cartas} ${styles.frente}`}
+        aria-label="Algumas cartas do baralho"
+        tabIndex={0}
+        data-cena="cartas"
+      >
         {baralho.cartas.map((carta, i) => (
           <li key={carta.nome} className={styles.item}>
             <Carta numeral={carta.numeral} nome={carta.nome} as="div" className={styles.carta}>

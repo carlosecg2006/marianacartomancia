@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { buildSecurityHeaders } from "./src/lib/security/headers";
+import { sitePublico } from "./src/lib/site";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -16,7 +17,7 @@ const nextConfig: NextConfig = {
     silenceDeprecations: ["import", "global-builtin", "color-functions", "if-function"],
   },
   async headers() {
-    return [{ source: "/(.*)", headers: buildSecurityHeaders({ isDev }) }];
+    return [{ source: "/(.*)", headers: buildSecurityHeaders({ isDev, publico: sitePublico }) }];
   },
 };
 
