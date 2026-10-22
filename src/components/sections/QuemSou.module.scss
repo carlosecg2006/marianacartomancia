@@ -1,0 +1,83 @@
+.secao {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: var(--section-gap) var(--page-margin) var(--space-9);
+  overflow: clip;
+  background: var(--surface);
+}
+
+.hera {
+  position: absolute;
+  top: 50%;
+  width: clamp(10rem, 18vw, 18rem);
+  height: auto;
+  transform: translateY(-50%);
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.esquerda {
+  left: var(--page-margin);
+}
+
+.direita {
+  right: var(--page-margin);
+}
+
+.folha {
+  width: min(100%, 40rem);
+  padding: clamp(1.5rem, 5vw, 3.75rem) clamp(1.5rem, 5vw, 3.75rem) var(--space-7);
+  background: var(--bg);
+}
+
+.recorte {
+  display: block;
+  width: min(100%, 40rem);
+  height: 1.25rem;
+}
+
+.cabecalho {
+  display: flex;
+  gap: var(--space-5);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.retrato {
+  width: clamp(5.5rem, 4rem + 4vw, 8.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.titulo {
+  margin: 0;
+  font-size: var(--step-head);
+  font-weight: 500;
+}
+
+.texto p {
+  margin: 0 0 1.4em;
+  line-height: 1.6;
+}
+
+.assinatura {
+  margin: var(--space-6) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--step-lead);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.papel {
+  margin: var(--space-1) 0 0;
+  color: var(--muted);
+}
+
+.destaque {
+  margin-top: var(--space-7);
+}

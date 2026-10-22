@@ -1,0 +1,22 @@
+// Uma grade e um par de margens para a página inteira.
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(0.75rem, 1.4vw, 1.5rem);
+  padding-inline: var(--page-margin);
+  max-width: 120rem;
+  margin-inline: auto;
+}
+
+.secao {
+  position: relative;
+  padding-block: var(--section-gap);
+  overflow: clip;
+}
+
+.titulo-secao {
+  margin: 0;
+  font-size: var(--step-head);
+  font-weight: 500;
+}

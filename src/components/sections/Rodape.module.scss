@@ -1,0 +1,106 @@
+.rodape {
+  --verso: #f1e6cf; // o pergaminho da fase solar, visto do lado da noite
+  padding: var(--section-gap) var(--page-margin) var(--page-margin);
+  background: var(--bg);
+}
+
+.escalopes {
+  display: block;
+  width: 100%;
+  height: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: -1px;
+}
+
+.verso {
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-8) clamp(1.5rem, 4vw, 4rem) var(--space-6);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+  }
+}
+
+.mensagem {
+  p {
+    max-width: 32ch;
+    margin: var(--space-4) 0 var(--space-6);
+  }
+}
+
+.titulo {
+  margin: 0;
+  font-size: var(--step-head);
+  font-weight: 500;
+}
+
+.ornamento {
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+}
+
+.hera {
+  width: clamp(9rem, 14vw, 13rem);
+  height: auto;
+}
+
+.pentagrama {
+  position: absolute;
+  width: 40%;
+  height: auto;
+}
+
+.enderecos {
+  position: relative;
+  justify-self: stretch;
+
+  ul {
+    display: grid;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--step-lead);
+  }
+
+  @media (min-width: 1024px) {
+    justify-self: end;
+  }
+}
+
+.selo {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  width: 5.5rem;
+  margin-bottom: var(--space-6);
+  padding: var(--space-3) var(--space-2) var(--space-2);
+  background: #0c1324;
+  color: #ede5d3;
+  font-family: var(--font-display);
+  font-weight: 600;
+
+  // A lua do selo fica na cor do luar, mesmo dentro do verso solar.
+  --ink: #ede5d3;
+}
+
+.lua {
+  width: 3rem;
+  height: 3rem;
+}
+
+.regiao {
+  margin: var(--space-6) 0 0;
+  color: var(--muted);
+}
+
+.imprenta {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--step-small);
+  text-align: center;
+}

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
+  images: { formats: ["image/avif", "image/webp"] },
   sassOptions: {
     // Bootstrap 5.3 ainda usa @import e funções globais do Sass.
     quietDeps: true,

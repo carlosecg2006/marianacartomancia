@@ -319,3 +319,65 @@ Cada fase termina com uma demonstração (screenshots ou preview) e a sua aprova
   - Strix sem achados altos ou críticos;
   - Lighthouse ≥ 90 nas 4 categorias em mobile e desktop;
   - teste manual no celular.
+
+---
+
+# Próxima fase: F2 — página estática (detalhamento)
+
+## Contexto
+- F0 e F1 estão prontas, com CI verde (run 39744401144).
+- A F2 monta as 11 seções da one-page com os textos de `docs/conteudo-inicial.md`, ainda sem animação (F3), sem banco (F4) e sem formulário funcionando (F7).
+- Segue a folha da taste-skill (`.taste-skill/direction.json`, direção `page-is-the-object`) e o sistema de design da F1 (`src/styles/_tokens.scss`, `src/components/ui/*`, `src/components/ornaments/*`).
+
+## Conteúdo
+- **`src/content/conteudo-inicial.ts`:** os textos padrão iniciais, tipados, transcritos de `docs/conteudo-inicial.md`, com um schema Zod por seção em `src/lib/validation/conteudo.ts`. Esse mesmo schema vai validar o banco na F4, e a página passa a ler do banco sem mudar os componentes.
+- **Trechos `[a preencher]`:** a história dela, o número do WhatsApp e as frases dela e da Prem não são renderizados. Os campos ficam vazios e a seção se adapta.
+- **Depoimentos:** a seção não aparece enquanto não houver nenhum. Não se inventa prova.
+
+## Seções → blueprint da folha (geometria da folha, cores e tipos da F1)
+
+| # | Seção | Fase | Blueprint | Notas |
+|---|---|---|---|---|
+| 1 | Abertura | solar | *Card over a dim room* | Fundo de céu/sol em gravura; carta **XIX O Sol** com `h1` "Mariana Dayrell", linha de apoio e o botão "Quero minha tiragem" (→ `#agendamento`) |
+| 2 | Quem sou | solar | *Founder's letter* (variante folha) | Folha pergaminho com borda inferior recortada; retrato redondo da Mari; carta em 1ª pessoa |
+| 3 | Citações | solar → crepúsculo | campo vermelho (o "descanso" da página) | Citação da Sara Koimbra em `blockquote`; o espaço das frases da Mari e da Prem fica pronto |
+| 4 | O baralho | crepúsculo | *Output slips along the edge* | Gravura de fundo; as "tiras" são cartas desenhadas por nós (moldura, selo, faixa e ornamento próprio) com os nomes A Louca, A Força, O Eremita, A Enforcada…, **sem a arte original** |
+| 5 | A consulta | lunar | *Title, note, facts row* | Fatos reais: áudio de 10–15 min · foto das cartas · respiração guiada · 100% online |
+| 6 | Como funciona | lunar | *Drag row of moments* | 4 momentos com a ordem dita em palavras ("Você escolhe o horário"…), sem números; rolagem horizontal nativa com scroll-snap |
+| 7 | Agendamento | lunar | *Visit card on a photograph* | Céu noturno com o cartão de reserva: campos e consentimento LGPD em rascunho. Botão desativado com aviso "agenda abre em breve" até a F7 |
+| 8 | Depoimentos | lunar | *One long letter* | Oculta sem dados |
+| 9 | Perguntas frequentes | lunar | *Answers as reading text* | 10 perguntas em texto corrido, duas colunas; JSON-LD `FAQPage` fica para a F10 |
+| 10–11 | Contato e rodapé | noite plena | *The back of the card* | Verso da carta (hera espelhada + pentagrama), carta **XVIII A Lua**, links (WhatsApp e Instagram só se preenchidos), links legais e crédito das imagens |
+
+- **Navegação:** barra simples com o nome, 3 a 4 links de âncora e a ação. Skip link para o conteúdo.
+- **Celular (320–390px):** cada blueprint na versão de telefone que a própria folha descreve.
+
+## Imagens (piso da taste-skill: 4+ imagens reais)
+- **Imagem própria:** a foto da Mari (`docs/referencias/foto-tarologa.jpg`), convertida para AVIF/WebP com menos de 300 KB.
+- **Gravuras de domínio público:**
+  - mapas celestes (Cellarius, *Harmonia Macrocosmica*);
+  - a lua de Hevelius (*Selenographia*);
+  - pranchas botânicas (hera, lavanda, dedaleira);
+  - sol e lua alquímicos;
+  - mapa antigo de Minas Gerais.
+- **Busca:** feita com `assets.mjs` e baixada com `--get`. Cada imagem é convertida com `sharp` e registrada em `docs/creditos-imagens.md`, com a linha de crédito no rodapé.
+- **Bloqueio atual:** a rede deste ambiente bloqueia os acervos (403). **Decisão (22/10): você libera os domínios** nas configurações do ambiente: menu do ambiente no topo da sessão → Edit → Network access → Allowed domains, mantendo "Allow package managers" marcado. Passo a passo em https://code.claude.com/docs/en/cloud-environments#network-access.
+  - Domínios: `commons.wikimedia.org`, `upload.wikimedia.org`, `api.openverse.org`, `api.artic.edu`, `www.artic.edu`, `collectionapi.metmuseum.org`, `images.metmuseum.org`.
+- **Ordem de trabalho para não travar:**
+  1. conteúdo tipado;
+  2. as 11 seções com a foto da Mari e os ornamentos;
+  3. os testes.
+  - As gravuras entram assim que a rede estiver liberada. Antes de buscar, confiro a liberação com `assets.mjs`.
+  - Se a mudança só valer para sessões novas, aviso e sigo com o resto. Nada de imagem inventada nem de substituto no lugar das gravuras.
+
+## Verificação da F2
+- `lint.mjs` e `inspect.mjs` da taste-skill a 1440, 768 e 390px com **0 FAIL**, mais até 3 rodadas de crítica com os screenshots (`references/critique.md`).
+- **Playwright:**
+  - cada seção tem título;
+  - um único `h1`;
+  - nenhuma rolagem horizontal da página em 320px;
+  - navegação completa por teclado, com skip link e foco visível;
+  - axe sem violações na página inteira;
+  - os links de âncora funcionam.
+- **Lighthouse CI:** entra no CI (`@lhci/cli`, perfil mobile) com meta ≥ 90.
+- **Entrega:** screenshots das 3 larguras para a sua aprovação.

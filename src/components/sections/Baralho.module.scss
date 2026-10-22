@@ -1,0 +1,122 @@
+// Blueprint "Output slips along the edge": o texto em cima, as cartas em pé
+// ao longo da borda de baixo, de alturas diferentes, cortadas pela seção.
+
+.secao {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 96svh;
+  padding-top: var(--section-gap);
+  overflow: clip;
+  background: var(--bg);
+}
+
+.texto {
+  grid-column: 1 / -1;
+
+  @media (min-width: 1024px) {
+    grid-column: 5 / 12;
+  }
+
+  p {
+    max-width: 36ch;
+    margin: var(--space-5) 0 0;
+    font-size: var(--step-lead);
+    line-height: 1.45;
+  }
+}
+
+.titulo {
+  margin: 0;
+  font-size: var(--step-head);
+  font-weight: 500;
+}
+
+.cartas {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin: var(--space-9) 0 0;
+  padding: 0 var(--page-margin);
+  list-style: none;
+}
+
+.item {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-bottom: -1.5rem; // a borda de baixo da seção corta só a moldura de baixo
+
+  &:nth-child(1) {
+    height: 34svh;
+  }
+  &:nth-child(2) {
+    height: 42svh;
+    transform: rotate(-1.5deg);
+  }
+  &:nth-child(3) {
+    height: 30svh;
+  }
+  &:nth-child(4) {
+    height: 44svh;
+  }
+  &:nth-child(5) {
+    height: 36svh;
+    transform: rotate(1.5deg);
+  }
+  &:nth-child(6) {
+    height: 40svh;
+  }
+  &:nth-child(7) {
+    height: 28svh;
+    transform: rotate(-1deg);
+  }
+}
+
+.carta {
+  height: 100%;
+
+  // A faixa com o nome cabe numa linha mesmo nas cartas estreitas.
+  // Em caixa normal: caixa alta pequena e espaçada vira etiqueta.
+  :global(p) {
+    padding-inline: var(--space-4);
+    font-size: var(--step-body);
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: nowrap;
+  }
+}
+
+.ornamento {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--accent);
+
+  svg {
+    width: min(70%, 9rem);
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .texto p {
+    font-size: var(--step-body);
+  }
+
+  .cartas {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0;
+  }
+
+  .item {
+    flex: 0 0 clamp(10rem, 42vw, 14rem);
+    margin-bottom: 0;
+    scroll-snap-align: start;
+  }
+
+  .secao {
+    padding-bottom: var(--space-8);
+  }
+}

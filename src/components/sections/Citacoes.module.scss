@@ -1,0 +1,73 @@
+.secao {
+  position: relative;
+  padding-block: var(--section-gap);
+  overflow: clip;
+  background: var(--field);
+  color: var(--field-ink);
+}
+
+.titulo {
+  grid-column: 1 / -1;
+  margin: 0 0 var(--space-7);
+  font-size: var(--step-head);
+  font-weight: 500;
+  color: var(--field-ink);
+
+  @media (min-width: 900px) {
+    grid-column: 1 / 5;
+    margin: 0;
+  }
+}
+
+.lista {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--space-8);
+
+  @media (min-width: 900px) {
+    grid-column: 5 / 13;
+  }
+}
+
+.citacao {
+  margin: 0;
+
+  blockquote {
+    margin: 0;
+  }
+
+  p {
+    max-width: 26ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1rem + 1.8vw, 2.25rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  figcaption {
+    margin-top: var(--space-5);
+    font-size: var(--step-body);
+  }
+}
+
+.estrelas {
+  position: absolute;
+  right: var(--page-margin);
+  bottom: var(--space-7);
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  color: var(--gold);
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  svg:nth-child(2) {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
