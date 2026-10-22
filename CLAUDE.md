@@ -9,6 +9,7 @@ Regras permanentes do projeto. Valem para toda tarefa. Contexto do produto em `P
   - Importe só os módulos Sass do Bootstrap que forem usados.
 - **Back-end e banco:** Supabase (Auth, Postgres, Storage).
 - **Pagamentos:** Stripe (Checkout + webhooks verificados por assinatura). Nunca tocar em dados de cartão.
+  - **Hoje não é usado:** o pagamento da consulta é combinado pelo WhatsApp (ver `PRODUTO.md`). Não implemente Stripe sem uma decisão nova.
 - **Hospedagem:** Vercel.
 - **Animações:** GSAP + ScrollTrigger, e Lenis para scroll suave.
 
@@ -29,9 +30,15 @@ Regras permanentes do projeto. Valem para toda tarefa. Contexto do produto em `P
 
 ## Direção visual
 
-- Boho + solar + dark + natureza + místico + **[A DEFINIR: Y2K anos 2000 OU ancestral/milenar]** + surrealista.
+- Boho + solar + dark + natureza + místico + **ancestral/milenar com um toque sutil de Y2K** + surrealista.
+  - O ancestral é a base.
+  - O Y2K (brilhos, iridescência, cromado/holográfico discreto) é só detalhe.
 - Ilustrações e composições com influência isométrica e art déco: linhas geométricas, simetria, ornamentos dourados.
-- Tema escuro como base, com acentos quentes/solares.
+- **Do sol à lua:** o site abre claro e solar e escurece com o scroll até a noite lunar escura.
+  - Tudo muda na passagem: paleta, animações, elementos e conceitos.
+  - O azul-turquesa atravessa as duas fases.
+  - O contraste AA vale em toda a transição, inclusive nos estados intermediários.
+- Tipografia com misticidade, seriedade e acalento.
 - A referência principal é a estética das cartas do baralho da taróloga (ver `PRODUTO.md` e `docs/referencias/`).
 
 ## Animações
@@ -82,7 +89,7 @@ Regras permanentes do projeto. Valem para toda tarefa. Contexto do produto em `P
 
 - Banner de consentimento de cookies. Tracking só depois do aceite.
 - Política de privacidade e termos de serviço.
-- Formulários com consentimento explícito e finalidade descrita.
+- Formulários com consentimento explícito e finalidade descrita. Isso inclui o pedido de agendamento: guarde só nome, WhatsApp e intenção, com prazo de retenção definido.
 - Scripts de tracking revisados.
 - Textos jurídicos: escreva rascunhos marcados **"RASCUNHO — revisar com advogado"**.
 
@@ -91,4 +98,5 @@ Regras permanentes do projeto. Valem para toda tarefa. Contexto do produto em `P
 - Antes de tarefas grandes, apresente um plano e espere aprovação.
 - Trabalhe em etapas pequenas e mostre o resultado de cada uma.
 - Nunca faça commit de segredos.
+- Todo conteúdo do site público vem do banco e pode ser editado no painel da administradora. Nada de texto fixo no código, exceto os textos padrão iniciais.
 - Não invente informação sobre a taróloga, o baralho ou a consulta. O que faltar fica "A DEFINIR" em `PRODUTO.md` e vira pergunta.
