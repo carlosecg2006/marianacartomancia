@@ -44,30 +44,31 @@
 .item {
   flex: 1 1 0;
   min-width: 0;
+  min-height: 17rem; // selo, ornamento e faixa sempre cabem
   margin-bottom: -1.5rem; // a borda de baixo da seção corta só a moldura de baixo
 
   &:nth-child(1) {
-    height: 34svh;
+    height: 38svh;
   }
   &:nth-child(2) {
-    height: 42svh;
+    height: 46svh;
     transform: rotate(-1.5deg);
   }
   &:nth-child(3) {
-    height: 30svh;
+    height: 35svh;
   }
   &:nth-child(4) {
-    height: 44svh;
+    height: 48svh;
   }
   &:nth-child(5) {
-    height: 36svh;
+    height: 44svh;
     transform: rotate(1.5deg);
   }
   &:nth-child(6) {
     height: 40svh;
   }
   &:nth-child(7) {
-    height: 28svh;
+    height: 34svh;
     transform: rotate(-1deg);
   }
 }
