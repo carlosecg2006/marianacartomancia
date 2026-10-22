@@ -1,0 +1,87 @@
+// Tokens do site. Tudo o que vem depois usa só estas variáveis.
+//
+// Cores por fase. Cada seção declara a sua com data-phase="solar|crepusculo|lunar";
+// o contraste de texto nunca depende de uma cor no meio da transição.
+// tests: src/styles/tokens.test.ts confere WCAG AA de cada par usado em texto.
+
+:root,
+[data-phase="solar"] {
+  --bg: #f1e6cf; // pergaminho do verso das cartas
+  --surface: #e6d6b3;
+  --ink: #23291a; // tinta de hera, quase preta
+  --muted: #4a4f35;
+  --accent: #0b6b68; // turquesa, o fio condutor
+  --accent-ink: #f7eedc;
+  --field: #9e1f1a; // vermelho do sol
+  --field-ink: #f7ebd3;
+  --gold: #b88a2e; // só ornamento
+  --gold-text: #725310;
+  --olive: #5b6a2c; // só ornamento
+}
+
+[data-phase="crepusculo"] {
+  --bg: #4a1a17;
+  --surface: #5e2420;
+  --ink: #f4e3c6;
+  --muted: #d9c4a4;
+  --accent: #5fd3c8;
+  --accent-ink: #14100e;
+  --field: #0b6b68;
+  --field-ink: #f4e3c6;
+  --gold: #d6a94c;
+  --gold-text: #e2be72;
+  --olive: #8e9c5a;
+}
+
+[data-phase="lunar"] {
+  --bg: #0c1324;
+  --surface: #172038;
+  --ink: #ede5d3;
+  --muted: #b9b3a3;
+  --accent: #4fd1c5;
+  --accent-ink: #0c1324;
+  --field: #7a1a22;
+  --field-ink: #f3e4d0;
+  --gold: #d9b66a;
+  --gold-text: #d9b66a;
+  --olive: #86ab97; // hera ao luar
+}
+
+:root {
+  // Tipografia: duas famílias, cinco tamanhos.
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-text: var(--font-jost), "Jost", system-ui, sans-serif;
+
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --step-display: clamp(3rem, 1.6rem + 6.4vw, 8rem);
+
+  --leading-display: 0.95;
+  --leading-text: 1.6;
+  --tracking-display: -0.02em;
+
+  // Espaço
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --page-margin: clamp(1rem, 0.6rem + 1.8vw, 2rem);
+  --section-gap: clamp(6rem, 3rem + 9vw, 12rem);
+  --measure: 62ch;
+
+  // Forma: cantos retos, chanfro déco.
+  --chamfer: 14px;
+  --control-height: 3rem;
+
+  // Movimento (a camada de animação entra na F3)
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 320ms;
+}

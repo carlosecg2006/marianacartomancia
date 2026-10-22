@@ -1,5 +1,7 @@
 // Ponto de entrada do site público.
-// Na F1 entram _tokens.scss, _bootstrap-config.scss e _themes.scss antes dos módulos do Bootstrap.
+
+@import "tokens";
+@import "bootstrap-config";
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
@@ -13,6 +15,9 @@
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
 @import "bootstrap/scss/helpers";
 
 @import "bootstrap/scss/utilities/api";
+
+@import "themes";

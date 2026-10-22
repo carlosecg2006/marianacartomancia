@@ -1,0 +1,61 @@
+// Variáveis do Bootstrap sobrescritas antes dos módulos dele.
+// Os valores Sass usam as cores da fase solar (o Bootstrap precisa de cores reais
+// para as funções dele); em tempo de execução, _themes.scss liga as variáveis
+// --bs-* às variáveis da fase.
+
+$primary: #0b6b68;
+$secondary: #b88a2e;
+$danger: #9e1f1a;
+$body-bg: #f1e6cf;
+$body-color: #23291a;
+
+$font-family-sans-serif: var(--font-text);
+$font-family-base: var(--font-text);
+$headings-font-family: var(--font-display);
+$headings-font-weight: 500;
+$headings-line-height: 0.95;
+$headings-margin-bottom: 0;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.6;
+$paragraph-margin-bottom: 1rem;
+
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-smooth-scroll: false; // Lenis cuida do scroll (F3)
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+$spacer: 1rem;
+$grid-gutter-width: 2rem;
+$container-padding-x: 2rem;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1440px,
+);
+
+$link-decoration: underline;
+$link-underline-offset: 0.2em;
+
+$focus-ring-width: 0.1875rem;
+$focus-ring-opacity: 1;
+$focus-ring-color: $primary;
+
+$btn-border-width: 0;
+$btn-padding-y: 0.875rem;
+$btn-padding-x: 1.5rem;
+$btn-font-weight: 500;
+$btn-focus-box-shadow: none; // desliga a sombra do Bootstrap (taste-skill-ignore)
+$btn-transition: none;
+
+$input-border-width: 2px;
+$input-border-color: #4a4f35;
+$input-bg: #f7eedc;
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-focus-border-color: $primary;
+$input-focus-box-shadow: none; // desliga a sombra do Bootstrap (taste-skill-ignore)

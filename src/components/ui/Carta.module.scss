@@ -1,0 +1,68 @@
+@mixin chanfro($c) {
+  clip-path: polygon(
+    $c 0,
+    calc(100% - #{$c}) 0,
+    100% $c,
+    100% calc(100% - #{$c}),
+    calc(100% - #{$c}) 100%,
+    $c 100%,
+    0 calc(100% - #{$c}),
+    0 $c
+  );
+}
+
+.carta {
+  @include chanfro(var(--chamfer));
+  padding: clamp(0.875rem, 4.5%, 1.375rem);
+  background: var(--gold);
+}
+
+.proporcao {
+  aspect-ratio: 7 / 11;
+}
+
+.janela {
+  @include chanfro(calc(var(--chamfer) - 4px));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-6) var(--space-5);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.conteudo {
+  flex: 1;
+}
+
+.selo {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: var(--space-5);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--gold-text);
+  font-family: var(--font-display);
+  font-size: var(--step-lead);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.faixa {
+  align-self: center;
+  margin: var(--space-6) 0 0;
+  padding: var(--space-2) var(--space-7);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--step-lead);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%, 14px 50%);
+}

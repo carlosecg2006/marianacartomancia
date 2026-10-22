@@ -51,3 +51,7 @@ next-env.d.ts
 
 # Lighthouse
 .lighthouseci/
+
+# taste-skill: só a folha da direção vai para o git
+.taste-skill/*
+!.taste-skill/direction.json

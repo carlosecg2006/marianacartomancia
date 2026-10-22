@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cormorant, jost } from "./fonts";
 import "@/styles/main.scss";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${cormorant.variable} ${jost.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -1,0 +1,96 @@
+// Liga o Bootstrap às variáveis da fase e define a base da página.
+
+:root,
+[data-phase] {
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--ink);
+  --bs-emphasis-color: var(--ink);
+  --bs-secondary-color: var(--muted);
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: var(--ink);
+  --bs-heading-color: var(--ink);
+  --bs-border-color: var(--muted);
+}
+
+[data-phase] {
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+// Links herdam a variável da fase em que estão, não a do :root.
+[data-phase] a:not([class]) {
+  color: var(--accent);
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--step-body);
+  line-height: var(--leading-text);
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.pular-para-conteudo {
+  position: absolute;
+  left: var(--page-margin);
+  top: var(--space-4);
+  z-index: 100;
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent);
+  color: var(--accent-ink);
+  transform: translateY(-200%);
+
+  &:focus-visible {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.form-control {
+  background-color: var(--surface);
+  color: var(--ink);
+  border-color: var(--muted);
+
+  &:focus {
+    background-color: var(--surface);
+    color: var(--ink);
+    border-color: var(--accent);
+  }
+}
+
+.form-label {
+  font-weight: 500;
+}

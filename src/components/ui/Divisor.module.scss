@@ -1,0 +1,24 @@
+.divisor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.ramo {
+  display: block;
+  width: min(30vw, 15rem);
+  height: auto;
+}
+
+.espelho {
+  display: block;
+  transform: scaleX(-1);
+}
+
+.centro {
+  width: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  height: auto;
+  flex: none;
+}

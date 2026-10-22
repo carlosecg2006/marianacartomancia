@@ -103,7 +103,8 @@ docs/
     - `get_available_slots(from, to)` devolve só horários, sem dados pessoais;
     - `request_booking(slot_start, name, whatsapp, intent, consent)` valida de novo, insere como `pending` e devolve só o id e o horário.
 - **Storage:**
-  - bucket `site-media` com leitura pública (são imagens do site publicado);
+  - bucket `site-media` **privado**: nenhum visitante acessa o arquivo original nem lista o bucket;
+  - as imagens chegam ao visitante só pelo otimizador do Next (`/_next/image`, no domínio do site), que busca o original no servidor com URL assinada de curta duração;
   - escrita só para admin, por política;
   - aceita só `image/webp`, `image/avif`, `image/jpeg` e `image/png`, até 5 MB;
   - o upload é feito pelo servidor e a imagem é convertida para WebP/AVIF.
@@ -288,16 +289,16 @@ Cada fase termina com uma demonstração (screenshots ou preview) e a sua aprova
 
 ## 8. Riscos e decisões que dependem de você
 
-### Decisões
-1. **Contas a criar:** Supabase, Vercel, Resend (e-mails), Upstash (rate limit) e Cloudflare Turnstile (anti-bot). Todas têm plano grátis. Google Cloud só se quiserem a fase F11. Quem cria e de quem é a conta?
-2. **Quem é admin até a entrega:** como é surpresa, proponho **você** como admin durante a construção. Na entrega, convidamos a Mari pelo e-mail dela e removemos o seu acesso, se quiser.
-3. **E-mails antes do domínio:** sem domínio verificado, o Resend só envia para o dono da conta. Até o domínio existir, os avisos vão para o seu e-mail.
-4. **Retenção dos dados de agendamento:** proposta de **90 dias** depois da consulta, e então o nome e o WhatsApp são apagados.
-5. **Bucket de imagens público:** as imagens do site precisam ser públicas para carregar rápido. O `CLAUDE.md` pede "bucket privado com políticas" para uploads. Proponho leitura pública com escrita só da admin, porque não há upload de visitante. Aprova a exceção?
-6. **Analytics:** proponho **nenhum**. Assim o banner de cookies só informa os cookies essenciais (sessão do painel). Querem medir visitas?
-7. **Stripe:** confirma que fica só documentado (`docs/stripe-futuro.md`), sem código?
-8. **Google Agenda (F11):** fazer agora ou deixar para depois da entrega?
-9. **Preview na Vercel:** ligar o repositório já na F2, para você ver cada fase no celular?
+### Decisões (respondidas em 22/10)
+1. **Contas:** você cria todas (Supabase, Vercel, Resend, Upstash, Turnstile e, se houver F11, Google Cloud). Nenhuma exige a Mari como dona: ela entra só como administradora do painel do site.
+2. **Administradores:** você durante a construção; depois da entrega, você **e** a Mari (a tabela `admin_users` aceita várias pessoas).
+3. **E-mails antes do domínio:** os avisos vão para o seu e-mail até o domínio ser verificado no Resend.
+4. **Retenção:** **90 dias** depois da consulta; então nome, WhatsApp e intenção são apagados.
+5. **Imagens:** bucket **privado**. O visitante vê as imagens no site, mas nunca o link do arquivo original no Supabase. Limite que não tem como evitar: qualquer imagem exibida numa página pode ser salva pelo visitante (clique direito ou print).
+6. **Analytics:** **sim**, com Vercel Web Analytics (sem cookies), carregado **só depois do aceite** no banner, como pede o `CLAUDE.md`. O CSP passa a liberar só o script da Vercel.
+7. **Stripe:** só documentado (`docs/stripe-futuro.md`), sem código. (Sem resposta contrária; mantido.)
+8. **Google Agenda (F11):** em aberto. Decidir antes da F11.
+9. **Preview na Vercel:** em aberto. Decidir antes do fim da F2.
 
 ### Riscos
 - **Desempenho × animação:** scroll horizontal, pin e parallax ameaçam o Lighthouse ≥ 90 no celular. Mitigação: matchMedia com cenas mais leves, imagens AVIF pequenas, CSS no lugar de WebGL e medição desde a F3.
