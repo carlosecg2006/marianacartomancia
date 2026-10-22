@@ -17,10 +17,10 @@ export function Abertura({ marca, abertura }: Props) {
   const [primeiro, ...resto] = marca.nome.split(" ");
 
   return (
-    <header id="inicio" data-phase="solar" className={styles.abertura}>
-      <Sol className={styles.sol} />
+    <header id="inicio" data-phase="solar" data-cena="por-do-sol" className={styles.abertura}>
+      <Sol className={styles.sol} data-alvo="sol" />
 
-      <div className={styles.carta}>
+      <div className={styles.carta} data-alvo="carta">
         <span className={styles.selo} aria-hidden="true">
           XIX
         </span>

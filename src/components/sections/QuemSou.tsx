@@ -13,10 +13,10 @@ export function QuemSou({ marca, quemSou }: Props) {
 
   return (
     <section id="quem-sou" data-phase="solar" className={styles.secao} aria-labelledby="quem-sou-titulo">
-      <Hera className={`${styles.hera} ${styles.esquerda}`} />
-      <Hera className={`${styles.hera} ${styles.direita}`} />
+      <Hera className={`${styles.hera} ${styles.esquerda}`} data-revelar="hera" />
+      <Hera className={`${styles.hera} ${styles.direita}`} data-revelar="hera" />
 
-      <div className={styles.folha}>
+      <div className={styles.folha} data-revelar>
         <div className={styles.cabecalho}>
           <Image
             src={foto}

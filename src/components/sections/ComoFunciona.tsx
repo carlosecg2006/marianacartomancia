@@ -25,12 +25,12 @@ export function ComoFunciona({ comoFunciona }: Props) {
       className={styles.secao}
       aria-labelledby="como-funciona-titulo"
     >
-      <h2 id="como-funciona-titulo" className={styles.titulo}>
+      <h2 id="como-funciona-titulo" className={styles.titulo} data-revelar>
         {comoFunciona.titulo}
       </h2>
 
       {/* Focável: a fileira rola para o lado e precisa responder ao teclado. */}
-      <ol className={styles.linha} aria-labelledby="como-funciona-titulo" tabIndex={0}>
+      <ol className={styles.linha} aria-labelledby="como-funciona-titulo" tabIndex={0} data-revelar-grupo>
         {comoFunciona.passos.map((passo, i) => (
           <li key={passo.titulo} className={styles.momento}>
             <h3 className={styles.legenda}>{passo.titulo}</h3>

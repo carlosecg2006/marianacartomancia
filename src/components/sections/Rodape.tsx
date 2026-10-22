@@ -33,7 +33,7 @@ export function Rodape({ marca, contato, contatoFinal }: Props) {
         <path d={`M0 80 V40 ${ESCALOPES} V80 Z`} fill="var(--verso)" />
       </svg>
 
-      <div data-phase="solar" className={styles.verso}>
+      <div data-phase="solar" className={styles.verso} data-revelar>
         <div className={styles.mensagem}>
           <h2 id="contato-titulo" className={styles.titulo}>
             {contatoFinal.titulo}

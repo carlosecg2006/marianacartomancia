@@ -20,11 +20,27 @@ export default defineConfig({
     launchOptions: { executablePath },
   },
   projects: [
-    { name: "celular-320", use: { ...devices["Desktop Chrome"], viewport: { width: 320, height: 640 } } },
-    { name: "desktop-1440", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
+    // Os projetos de e2e ignoram tests/perf; a medição de quadros roda sozinha no fim.
+    {
+      name: "celular-320",
+      testIgnore: "perf/**",
+      use: { ...devices["Desktop Chrome"], viewport: { width: 320, height: 640 } },
+    },
+    {
+      name: "desktop-1440",
+      testIgnore: "perf/**",
+      use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } },
+    },
     {
       name: "movimento-reduzido",
+      testIgnore: "perf/**",
       use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 }, reducedMotion: "reduce" },
+    },
+    {
+      name: "desempenho",
+      testMatch: "perf/**/*.spec.ts",
+      dependencies: ["celular-320", "desktop-1440", "movimento-reduzido"],
+      use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } },
     },
   ],
   webServer: {

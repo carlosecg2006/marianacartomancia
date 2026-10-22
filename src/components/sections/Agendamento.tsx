@@ -28,16 +28,18 @@ export function Agendamento({ agendamento }: Props) {
       aria-labelledby="agendamento-titulo"
     >
       <div className={styles.ceu} aria-hidden="true">
-        <Lua fase="cheia" className={styles.lua} />
-        {ESTRELAS.map(([x, y, s]) => (
-          <span
-            key={`${x}-${y}`}
-            className={styles.estrela}
-            style={{ left: `${x}%`, top: `${y}%`, scale: s }}
-          >
-            <Estrela />
-          </span>
-        ))}
+        <Lua fase="cheia" className={styles.lua} data-alvo="lua" />
+        <span className={styles.estrelas} data-estrelas>
+          {ESTRELAS.map(([x, y, s]) => (
+            <span
+              key={`${x}-${y}`}
+              className={styles.estrela}
+              style={{ left: `${x}%`, top: `${y}%`, scale: s }}
+            >
+              <Estrela />
+            </span>
+          ))}
+        </span>
       </div>
 
       <div className={styles.cartao}>

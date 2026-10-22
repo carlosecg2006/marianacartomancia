@@ -9,16 +9,16 @@ export function Consulta({ consulta }: Props) {
   return (
     <section id="consulta" data-phase="lunar" className={styles.secao} aria-labelledby="consulta-titulo">
       <div className="grade">
-        <h2 id="consulta-titulo" className={styles.titulo}>
+        <h2 id="consulta-titulo" className={styles.titulo} data-revelar>
           {consulta.titulo}
         </h2>
-        <div className={styles.nota}>
+        <div className={styles.nota} data-revelar>
           {consulta.paragrafos.map((p) => (
             <p key={p}>{p}</p>
           ))}
         </div>
 
-        <dl className={styles.fatos}>
+        <dl className={styles.fatos} data-revelar-grupo>
           {consulta.fatos.map((f) => (
             <div key={f.valor} className={styles.fato}>
               <dt>{f.valor}</dt>

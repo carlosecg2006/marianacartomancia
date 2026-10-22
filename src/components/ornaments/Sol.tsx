@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import { polar } from "./geometry";
 
 const RAYS = Array.from({ length: 24 }, (_, i) => {
@@ -12,12 +13,12 @@ const RAYS = Array.from({ length: 24 }, (_, i) => {
 
 const DOTS = Array.from({ length: 24 }, (_, i) => polar(45, i * 15 - 82.5));
 
-type Props = { className?: string };
+type Props = Omit<ComponentProps<"svg">, "viewBox" | "children">;
 
 // Sol déco: raios alternados, anel de contas e disco duplo (dourado e vermelho).
-export function Sol({ className }: Props) {
+export function Sol(props: Props) {
   return (
-    <svg className={className} viewBox="-100 -100 200 200" aria-hidden="true" focusable="false">
+    <svg {...props} viewBox="-100 -100 200 200" aria-hidden="true" focusable="false">
       <g fill="var(--gold)">
         {RAYS.map((d) => (
           <path key={d} d={d} />

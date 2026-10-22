@@ -38,3 +38,26 @@ A skill prevê isso para marcas existentes (`--keep palette,type`). A direção 
 | `Citacao` | `src/components/ui/Citacao.tsx` | `figure` + `blockquote` + autoria |
 | `Divisor` | `src/components/ui/Divisor.tsx` | ramo de hera, pentagrama, ramo espelhado |
 | Ornamentos | `src/components/ornaments/` | `Sol`, `Lua` (crescente/cheia), `Estrela`, `Pentagrama` (de galhos), `Hera` (espelhada) — desenhos próprios, nada copiado das cartas |
+
+## Movimento (F3)
+
+Código em `src/animations/` (`CamadaDeMovimento.tsx` carrega GSAP, ScrollTrigger e Lenis depois da primeira pintura; `cenas.ts` monta as cenas).
+
+| Cena | O que faz | Onde | Desliga em |
+|---|---|---|---|
+| **Pôr do sol** (assinatura) | ao sair da carta XIX, o sol gira e afunda e a carta recua (escala e posição, sem transparência) | abertura | movimento reduzido |
+| **Fio turquesa** | linha na margem esquerda que cresce com a página; o disco desce de sol a lua | página toda | celular/tablet, movimento reduzido |
+| **Cartas dadas** | as cartas sobem da borda da seção, uma a uma, presas à rolagem | baralho | celular/tablet (vira fileira rolável), movimento reduzido |
+| Entradas | título, texto e detalhes sobem 24px com opacidade, em ordem, uma vez | todas as seções (o formulário nunca anima) | movimento reduzido |
+| Hera | os ramos crescem a partir da base | quem sou | movimento reduzido |
+| Estrelas (Y2K) | acendem uma vez, sem loop | citações, agendamento | movimento reduzido |
+| Lua | sobe devagar (paralaxe de 8%) | agendamento | movimento reduzido |
+| Rolagem suave | Lenis com lerp 0,12 | página toda | toque e movimento reduzido |
+
+Regras aplicadas:
+- só `transform` e `opacity`;
+- estados iniciais criados pelo JavaScript (sem JS, tudo aparece);
+- `opacity` em vez de `visibility`, para o conteúdo continuar acessível a leitores de tela;
+- cada entrada dispara uma vez.
+
+Testes: `tests/e2e/movimento.spec.ts` e `tests/perf/quadros.spec.ts` (CPU 4×: mediana de 16,7 ms por quadro).

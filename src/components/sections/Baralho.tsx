@@ -23,7 +23,7 @@ export function Baralho({ baralho }: Props) {
   return (
     <section id="baralho" data-phase="crepusculo" className={styles.secao} aria-labelledby="baralho-titulo">
       <div className="grade">
-        <div className={styles.texto}>
+        <div className={styles.texto} data-revelar-grupo>
           <h2 id="baralho-titulo" className={styles.titulo}>
             {baralho.titulo}
           </h2>
@@ -34,7 +34,7 @@ export function Baralho({ baralho }: Props) {
       </div>
 
       {/* Focável: no celular a fileira rola para o lado e precisa responder ao teclado. */}
-      <ul className={styles.cartas} aria-label="Algumas cartas do baralho" tabIndex={0}>
+      <ul className={styles.cartas} aria-label="Algumas cartas do baralho" tabIndex={0} data-cena="cartas">
         {baralho.cartas.map((carta, i) => (
           <li key={carta.nome} className={styles.item}>
             <Carta numeral={carta.numeral} nome={carta.nome} as="div" className={styles.carta}>

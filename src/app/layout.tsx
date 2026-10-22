@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cormorant, jost } from "./fonts";
+import "lenis/dist/lenis.css";
 import "@/styles/main.scss";
 
 export const metadata: Metadata = {

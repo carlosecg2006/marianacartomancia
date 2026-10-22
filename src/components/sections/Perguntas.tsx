@@ -10,10 +10,10 @@ export function Perguntas({ faq }: Props) {
   return (
     <section id="perguntas" data-phase="lunar" className={styles.secao} aria-labelledby="perguntas-titulo">
       <div className="grade">
-        <h2 id="perguntas-titulo" className={styles.titulo}>
+        <h2 id="perguntas-titulo" className={styles.titulo} data-revelar>
           {faq.titulo}
         </h2>
-        <div className={styles.texto}>
+        <div className={styles.texto} data-revelar-grupo>
           {faq.itens.map((item) => (
             <p key={item.pergunta}>
               <strong>{item.pergunta}</strong> {item.resposta}

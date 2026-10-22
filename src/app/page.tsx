@@ -1,3 +1,4 @@
+import { CamadaDeMovimento } from "@/animations/CamadaDeMovimento";
 import { Abertura } from "@/components/sections/Abertura";
 import { Agendamento } from "@/components/sections/Agendamento";
 import { Baralho } from "@/components/sections/Baralho";
@@ -8,6 +9,7 @@ import { Depoimentos } from "@/components/sections/Depoimentos";
 import { Perguntas } from "@/components/sections/Perguntas";
 import { QuemSou } from "@/components/sections/QuemSou";
 import { Rodape } from "@/components/sections/Rodape";
+import { FioTurquesa } from "@/components/ui/FioTurquesa";
 import { conteudoInicial } from "@/content/conteudo-inicial";
 
 // One-page: do sol (carta XIX) à lua (carta XVIII). Na F4 o conteúdo passa a vir do banco.
@@ -31,6 +33,8 @@ export default function Home() {
         <Perguntas faq={c.faq} />
       </main>
       <Rodape marca={c.marca} contato={c.contato} contatoFinal={c.contatoFinal} />
+      <FioTurquesa />
+      <CamadaDeMovimento />
     </>
   );
 }

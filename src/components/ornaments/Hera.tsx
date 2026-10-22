@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import { IVY_LEAF } from "./geometry";
 
 // Um ramo sobe em laços; o outro é o espelho dele e os dois desenham
@@ -19,9 +20,9 @@ const LEAVES: [x: number, y: number, rotate: number][] = [
   [112, 52, -110],
 ];
 
-type Props = { className?: string };
+type Props = Omit<ComponentProps<"svg">, "viewBox" | "children">;
 
-export function Hera({ className }: Props) {
+export function Hera(props: Props) {
   const ramo = (
     <>
       <path d={STEM} fill="none" stroke="var(--olive)" strokeWidth="5" strokeLinecap="round" />
@@ -37,7 +38,7 @@ export function Hera({ className }: Props) {
   );
 
   return (
-    <svg className={className} viewBox="0 0 240 400" aria-hidden="true" focusable="false">
+    <svg {...props} viewBox="0 0 240 400" aria-hidden="true" focusable="false">
       <g>{ramo}</g>
       <g transform="translate(240 0) scale(-1 1)">{ramo}</g>
     </svg>

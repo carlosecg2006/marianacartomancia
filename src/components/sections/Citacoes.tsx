@@ -11,10 +11,10 @@ export function Citacoes({ citacoes }: Props) {
   return (
     <section id="citacoes" data-phase="solar" className={styles.secao} aria-labelledby="citacoes-titulo">
       <div className="grade">
-        <h2 id="citacoes-titulo" className={styles.titulo}>
+        <h2 id="citacoes-titulo" className={styles.titulo} data-revelar>
           {citacoes.titulo}
         </h2>
-        <div className={styles.lista}>
+        <div className={styles.lista} data-revelar-grupo>
           {citacoes.itens.map((c) => (
             <figure key={c.texto} className={styles.citacao}>
               <blockquote>
@@ -25,7 +25,7 @@ export function Citacoes({ citacoes }: Props) {
           ))}
         </div>
       </div>
-      <span className={styles.estrelas} aria-hidden="true">
+      <span className={styles.estrelas} aria-hidden="true" data-estrelas>
         <Estrela />
         <Estrela />
         <Estrela />

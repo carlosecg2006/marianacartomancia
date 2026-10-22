@@ -1,9 +1,11 @@
-type Props = { className?: string; fase?: "crescente" | "cheia" };
+import type { ComponentProps } from "react";
+
+type Props = Omit<ComponentProps<"svg">, "viewBox" | "children"> & { fase?: "crescente" | "cheia" };
 
 // Lua crescente (pontas para a direita) ou cheia, em cor sólida.
-export function Lua({ className, fase = "crescente" }: Props) {
+export function Lua({ fase = "crescente", ...props }: Props) {
   return (
-    <svg className={className} viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <svg {...props} viewBox="0 0 200 200" aria-hidden="true" focusable="false">
       {fase === "cheia" ? (
         <circle cx="100" cy="100" r="80" fill="var(--ink)" />
       ) : (
